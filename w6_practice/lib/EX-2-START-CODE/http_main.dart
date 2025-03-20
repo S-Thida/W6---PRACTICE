@@ -9,13 +9,12 @@ import 'ui/screens/post_screen.dart';
 
 void main() {
   // 1- Create the repository
-  PostRepository postRepo = MockPostRepository();
-   
+   PostRepository postRepo1 = HttpPostsRepository();
 
   // 2 - Run the UI
   runApp(
     ChangeNotifierProvider(
-      create: (context) => PostProvider(repository: postRepo),
+      create: (context) => PostProvider(repository: postRepo1),
       child: MaterialApp(debugShowCheckedModeBanner: false, home: PostScreen()),
     ),
   );
